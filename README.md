@@ -1,77 +1,109 @@
 # Reliable Semantic Alignment Learning for Text-based Aerial-Ground Person Retrieval
 
-Official PyTorch implementation of the paper Reliable Semantic Alignment Learning for Text-based Aerial-Ground Person Retrieval.
 
 <div align="center">
 
 <p align="center">
-  <a href="#-news">News</a> •
-  <a href="#-introduction">Introduction</a> •
-  <a href="#-setup">Setup</a> •
-  <a href="#-dataset-preparation">Dataset</a> •
-  <a href="#-configuration">Config</a> •
-  <a href="#-training">Training</a> •
-  <a href="#-evaluation">Evaluation</a> •
-  <a href="#-citation">Citation</a>
+  <a href="#introduction">Introduction</a> •
+  <a href="#news">News</a> •
+  <a href="#requirements">Requirements</a> •
+  <a href="#dataset-preparation">Dataset</a> •
+  <a href="#training-and-evaluation">Training & Evaluation</a> •
+  <a href="#citation">Citation</a> •
+  <a href="#acknowledgments">Acknowledgments</a> •
+  <a href="#license">License</a>
 </p>
 
 </div>
 
 ---
 
+<a id="introduction"></a>
+## 📌 Introduction
+This repository provides the official implementation of Reliable Semantic Alignment Learning for Text-based Aerial-Ground Person Retrieval.
+
+<a id="news"></a>
 ## 📢 News
+- **[Coming Soon]** Core implementation and pretrained weights will be released.
 
+<a id="requirements"></a>
+## 🛠️ Requirements
+We train and evaluate RSAL on a single NVIDIA RTX 4090 GPU with 24GB memory. The main dependencies are:
 
-# Usage
-
-## Requirements
-we use a single RTX4090 24G GPU for training and evaluation. 
-```
+```bash
 pytorch 1.9.0
 torchvision 0.10.0
 prettytable
 easydict
 ```
 
-### Prepare Datasets
-Download the CUHK-PEDES dataset from [here](https://github.com/ShuangLI59/Person-Search-with-Natural-Language-Description), ICFG-PEDES dataset from [here](https://github.com/zifyloo/SSAN) and RSTPReid dataset form [here](https://github.com/NjtechCVLab/RSTPReid-Dataset)
 
-Organize them in `your dataset root dir` folder as follows:
-```
-|-- your dataset root dir/
-|   |-- <CUHK-PEDES>/
-|       |-- imgs
-|            |-- cam_a
-|            |-- cam_b
-|            |-- ...
-|       |-- reid_raw.json
-|
-|   |-- <ICFG-PEDES>/
-|       |-- imgs
-|            |-- test
-|            |-- train 
-|       |-- ICFG_PEDES.json
-|
-|   |-- <RSTPReid>/
-|       |-- imgs
-|       |-- data_captions.json
+<a id="dataset-preparation"></a>
+## 📂 Dataset Preparation
+We conduct experiments on multiple text-based person retrieval benchmarks:
+- **TAG-PEDES** for Text-based Aerial-Ground Person Retrieval.
+- **AERI-PEDES** and **TBAPR** for Text-based Aerial Person Retrieval.
+- **CUHK-PEDES**, **ICFG-PEDES**, and **RSTPReid** for conventional Text-based Person Retrieval.
 
-|-- your dataset root dir/
+Please obtain the datasets from their official repositories:
+- **TAG-PEDES**: [official repository](https://github.com/Flame-Chasers/TAG-PR/tree/main)
+- **TBAPR / AERI-PEDES**: [official repository](https://github.com/xbdxwyh/AEA-FIRM-main)
+- **CUHK-PEDES**: [project page](https://github.com/ShuangLI59/Person-Search-with-Natural-Language-Description)
+- **ICFG-PEDES**: [official repository](https://github.com/zifyloo/SSAN)
+- **RSTPReid**: [official repository](https://github.com/NjtechCVLab/RSTPReid-Dataset)
+
+Please organize the datasets as follows:
+```text
+dataset/
 ├── TAG-PEDES/
-│   ├── images/
-│   ├── train.json
-│   ├── test.json
-│   └── ...
+│   ├── anno_dir/
+│   │   ├── train_reid.json
+│   │   └── test_reid.json
+│   └── images/
+│       ├── 0001.jpg
+│       ├── 0002.jpg
+│       └── ...
 ├── AERI-PEDES/
 ├── TBAPR/
 ├── CUHK-PEDES/
 ├── ICFG-PEDES/
 └── RSTPReid/
-
-
 ```
 
+<a id="training-and-evaluation"></a>
+## 🚀 Training and Evaluation
+
+### Training New Models
+
+To train RSAL, simply run:
+
+```bash
+sh run_rsal.sh
+```
+
+### Evaluation
+```bash
+python test.py --config_file 'path/to/model_dir/configs.yaml'
+```
+
+<a id="citation"></a>
+## 📝 Citation
+If you find this code useful for your research, please cite our paper.
+
+```bibtex
+Manuscript under review
+```
+
+<a id="license"></a>
+## 📄 License
+This project is released under the MIT License.
 
 
-## Acknowledgments
-Some components of this code implementation are adopted from [IRRA](https://github.com/anosorae/IRRA), [MLLM4Text-ReID](https://github.com/WentaoTan/MLLM4Text-ReID), and [HAM](https://github.com/sssaury/HAM). We sincerely appreciate for their contributions.
+<a id="acknowledgments"></a>
+## 🙏 Acknowledgments
+Some components of this code implementation are adopted from [IRRA](https://github.com/anosorae/IRRA). We sincerely appreciate for their contributions.
+
+
+
+
+

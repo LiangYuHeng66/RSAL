@@ -3,7 +3,7 @@ DATASET_NAME="TAG-PEDES"
 
 CUDA_VISIBLE_DEVICES=0 \
 python train.py \
---name TAG-PR-RSAL \
+--name TAG-PR \
 --img_aug \
 --txt_aug \
 --batch_size 128 \

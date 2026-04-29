@@ -2,7 +2,7 @@
 DATASET_NAME="TAG-PEDES"
 
 CUDA_VISIBLE_DEVICES=0 \
-python finetune.py \
+python train.py \
 --name TAG-PR-RSAL \
 --img_aug \
 --txt_aug \

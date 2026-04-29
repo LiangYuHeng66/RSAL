@@ -1,8 +1,28 @@
 # Reliable Semantic Alignment Learning for Text-based Aerial-Ground Person Retrieval
 
-Official PyTorch implementation of the paper **Reliable Semantic Alignment Learning for Text-based Aerial-Ground Person Retrieval**.
+Official PyTorch implementation of the paper Reliable Semantic Alignment Learning for Text-based Aerial-Ground Person Retrieval.
+
+<div align="center">
+
+<p align="center">
+  <a href="#-news">News</a> •
+  <a href="#-introduction">Introduction</a> •
+  <a href="#-setup">Setup</a> •
+  <a href="#-dataset-preparation">Dataset</a> •
+  <a href="#-configuration">Config</a> •
+  <a href="#-training">Training</a> •
+  <a href="#-evaluation">Evaluation</a> •
+  <a href="#-citation">Citation</a>
+</p>
+
+</div>
+
+---
+
+## 📢 News
 
 
+# Usage
 
 ## Requirements
 we use a single RTX4090 24G GPU for training and evaluation. 
@@ -35,6 +55,20 @@ Organize them in `your dataset root dir` folder as follows:
 |   |-- <RSTPReid>/
 |       |-- imgs
 |       |-- data_captions.json
+
+|-- your dataset root dir/
+├── TAG-PEDES/
+│   ├── images/
+│   ├── train.json
+│   ├── test.json
+│   └── ...
+├── AERI-PEDES/
+├── TBAPR/
+├── CUHK-PEDES/
+├── ICFG-PEDES/
+└── RSTPReid/
+
+
 ```
 
 

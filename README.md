@@ -47,7 +47,8 @@ We conduct experiments on multiple text-based person retrieval benchmarks:
 
 Please obtain the datasets from their official repositories:
 - **TAG-PEDES**: [official repository](https://github.com/Flame-Chasers/TAG-PR/tree/main)
-- **TBAPR / AERI-PEDES**: [official repository](https://github.com/xbdxwyh/AEA-FIRM-main)
+- **TBAPR**: [official repository](https://github.com/xbdxwyh/AEA-FIRM-main)
+- **AERI-PEDES**: [official repository](https://github.com/Yifei-AHU/AERI-PEDES)
 - **CUHK-PEDES**: [project page](https://github.com/ShuangLI59/Person-Search-with-Natural-Language-Description)
 - **ICFG-PEDES**: [official repository](https://github.com/zifyloo/SSAN)
 - **RSTPReid**: [official repository](https://github.com/NjtechCVLab/RSTPReid-Dataset)
